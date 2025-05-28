@@ -19,21 +19,21 @@ function getWeatherIcon(forecast) {
   }
 }
 
-function WeatherCard(props) {
-  const icon = getWeatherIcon(props.data.forecast);
+function Location(props) {
+  const locationData = props.data.find(city => city.city === props.location);
+  const icon = getWeatherIcon(locationData.forecast);
   return (
     <div className = "card">
         <div className = "img-container">
             <img className="card-img-top" src = {icon} alt="Card image cap" id = "icon"/>
         </div>
         <div className="card-body">
-            <h3 className="card-title">{props.data.city}</h3>
-            <h5 className="card-text">{props.data.temperature}</h5>
-            <h5 className="card-text">{props.data.forecast}</h5>
+            <h3 className="card-title">{locationData.city}</h3>
+            <h5 className="card-text">{locationData.temperature}</h5>
+            <h5 className="card-text">{locationData.forecast}</h5>
         </div>
     </div>
   );
 };
 
-// Export the WeatherCard
-export default WeatherCard;
+export default Location;
