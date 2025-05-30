@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import cities from "./data";
 import WeatherCard from "./components/WeatherCard";
 import Location from "./components/Location";
+import Form from "./components/Form";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     return (
         <>
             <h1 className = "title">REACTIVE WEATHER</h1>
+            <Form location = {location} setLocation = {setLocation} />
             <h3 className = "subtitle">Up to the minute weather news</h3>
             <div className = "app">
                 {/* Render components here */}
