@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // Import data and WeatherCard here
 import cities from "./data";
 import WeatherCard from "./components/WeatherCard";
@@ -8,6 +8,7 @@ import Form from "./components/Form";
 
 function App() {
     const [location, setLocation] = useState("Rome")
+
     return (
         <>
             <h1 className = "title">REACTIVE WEATHER</h1>
